@@ -1,6 +1,6 @@
 // Set your specific date and time here (Year, Month-1, Day, Hour, Minute, Second)
 // Note: Month is 0-indexed (0 = January, 11 = December)
-const startDate = new Date(2024, 0, 31, 14, 0, 0);
+const startDate = new Date(2026, 0, 31, 14, 0, 0);
 
 function updateTimer() {
     const now = new Date();
@@ -16,19 +16,25 @@ function updateTimer() {
     const totalMinutes = Math.floor(diff / (1000 * 60));
     const totalSeconds = Math.floor(diff / 1000);
     
+    // For second row: hours with remaining minutes and seconds
+    const hoursMinutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const hoursSeconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
     // Update first row (days, hours, minutes, seconds)
     document.getElementById('days').textContent = days;
     document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
     document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
     document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
     
-    // Update second row (total hours, minutes, seconds)
+    // Update second row (total hours with remaining minutes and seconds)
     document.getElementById('totalHours').textContent = totalHours.toLocaleString();
-    document.getElementById('totalMinutes').textContent = totalMinutes.toLocaleString();
-    document.getElementById('totalSeconds').textContent = totalSeconds.toLocaleString();
+    document.getElementById('totalMinutes').textContent = hoursMinutes.toString().padStart(2, '0');
+    document.getElementById('totalSeconds').textContent = hoursSeconds.toString().padStart(2, '0');
     
-    // Update third row (just minutes)
+    // Update third row (total minutes with remaining seconds 0-59)
+    const minutesSeconds = Math.floor((diff % (1000 * 60)) / 1000);
     document.getElementById('onlyMinutes').textContent = totalMinutes.toLocaleString();
+    document.getElementById('onlySeconds').textContent = minutesSeconds.toString().padStart(2, '0');
 }
 
 // Update immediately and then every second
