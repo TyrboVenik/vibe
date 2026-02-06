@@ -11,10 +11,24 @@ function updateTimer() {
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
     
+    // Total time in different units
+    const totalHours = Math.floor(diff / (1000 * 60 * 60));
+    const totalMinutes = Math.floor(diff / (1000 * 60));
+    const totalSeconds = Math.floor(diff / 1000);
+    
+    // Update first row (days, hours, minutes, seconds)
     document.getElementById('days').textContent = days;
     document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
     document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
     document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    
+    // Update second row (total hours, minutes, seconds)
+    document.getElementById('totalHours').textContent = totalHours.toLocaleString();
+    document.getElementById('totalMinutes').textContent = totalMinutes.toLocaleString();
+    document.getElementById('totalSeconds').textContent = totalSeconds.toLocaleString();
+    
+    // Update third row (just minutes)
+    document.getElementById('onlyMinutes').textContent = totalMinutes.toLocaleString();
 }
 
 // Update immediately and then every second

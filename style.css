@@ -36,6 +36,7 @@ h1 {
     gap: 2rem;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
 .time-unit {
