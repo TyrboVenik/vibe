@@ -31,10 +31,12 @@ function updateTimer() {
     document.getElementById('totalMinutes').textContent = hoursMinutes.toString().padStart(2, '0');
     document.getElementById('totalSeconds').textContent = hoursSeconds.toString().padStart(2, '0');
     
-    // Update third row (total minutes with remaining seconds 0-59)
+    // Update third row (total minutes with remaining seconds 0-59 and milliseconds 0-999)
     const minutesSeconds = Math.floor((diff % (1000 * 60)) / 1000);
+    const minutesMilliseconds = diff % 1000;
     document.getElementById('onlyMinutes').textContent = totalMinutes.toLocaleString();
     document.getElementById('onlySeconds').textContent = minutesSeconds.toString().padStart(2, '0');
+    document.getElementById('onlyMilliseconds').textContent = minutesMilliseconds.toString().padStart(3, '0');
 }
 
 // Update immediately and then every second
