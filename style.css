@@ -22,13 +22,20 @@ body {
 h1 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 300;
 }
 
 .date-label {
     font-size: 1.2rem;
     margin-bottom: 3rem;
-    opacity: 0.9;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .timer {
@@ -72,8 +79,12 @@ h1 {
 .number {
     display: block;
     font-size: 3.5rem;
-    font-weight: bold;
+    font-weight: 300;
     margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .label {
@@ -81,7 +92,10 @@ h1 {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    opacity: 0.8;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 @media (max-width: 768px) {
@@ -149,13 +163,15 @@ h1 {
 
 .section-title {
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 300;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-transform: uppercase;
     letter-spacing: 3px;
-    opacity: 0.9;
 }
 
 .section-title:first-of-type {
