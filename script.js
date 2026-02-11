@@ -39,6 +39,6 @@ function updateTimer() {
     document.getElementById('onlyMilliseconds').textContent = minutesMilliseconds.toString().padStart(3, '0');
 }
 
-// Update immediately and then every millisecond
+// Update immediately and then every 10 milliseconds
 updateTimer();
-setInterval(updateTimer, 1);
+setInterval(updateTimer, 37);
