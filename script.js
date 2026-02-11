@@ -1,6 +1,6 @@
 // Set your specific date and time here (Year, Month-1, Day, Hour, Minute, Second)
 // Note: Month is 0-indexed (0 = January, 11 = December)
-const startDate = new Date(2026, 0, 31, 14, 0, 0);
+const startDate = new Date(2026, 1, 11, 0, 10, 0);
 
 function updateTimer() {
     const now = new Date();
